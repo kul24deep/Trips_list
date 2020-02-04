@@ -1,0 +1,70 @@
+{% load staticfiles %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Django</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="/" class="brand-logo">Trips List</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="/">Home</a> </li>
+                <li><a href="/">About</a> </li>
+            </ul>
+        </div>
+
+    </nav>
+<h1 style="text-align: center">Where do you want to head out this time!</h1>
+    <h2 style="text-align: center">Exclusive Vacations Rentals Just for you!</h2>
+    <div class="container">
+    <div class="row">
+        <div class="col s4">
+            <div class="center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkhoAcD9ivR5_U6p1cKObwbYtKB8Nz0HI4NZZ67ngfDk7FFuOI&s" style="size : width:150px;height:150px" alt="no image">
+
+                <p>Fast trip advisor web scraper</p>
+                <p class = "light centre">Scrape away here with beautiful GUI</p>
+            </div>
+        </div>
+
+
+        <div class="col s4">
+            <div class="center">
+                <img src="https://img.freepik.com/free-vector/search-concept-illustration_114360-156.jpg?size=338&ext=jpg" style="size : width:200px;height:200px" alt="no image">
+                <p>Filter your searches</p>
+                <p class=" Light center"> We built in functionality to filter based on pricing </p>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <div class="center">
+                <img src="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18823.jpg?size=338&ext=jpg" style="size : width:150px;height:150px" alt="no image">
+                <p>A much advanced front-end to Trips List</p>
+                <p class="light center">We built this with Love</p>
+            </div>
+        </div>
+    </div>
+
+        <form action="{% url 'new_search'%}" method="post">
+            {% csrf_token %}
+            <input type="text" name="search" placeholder="search">
+            <button class="btn waves-effect wave-light" type="submit" name="action">submit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+
+{% block content %}
+
+{% endblock content %}
+    </div>
+</body>
+</html>

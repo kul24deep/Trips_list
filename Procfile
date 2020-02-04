@@ -1,0 +1,1 @@
+web: gunicorn trips_list.wsgi
